@@ -7,3 +7,12 @@
 button {
     cursor: pointer;
 }
+
+.container {
+    max-width: 1020px;
+    margin: auto;
+}
+
+.home-container {
+    margin-top: 1rem;
+}
