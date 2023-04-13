@@ -31,12 +31,15 @@ const useFetch = async ({ url, method = 'GET', params }: paramsType) => {
   };
 
   useEffect(() => {
-    axios.get(url, options).then((data) => {
-      console.log('data: ', data);
-    });
+    setIsloading(true);
+    axios
+      .get(url, options)
+      .then((data) => setData(data.data.data))
+      .catch((error) => setError(error))
+      .finally(() => setIsloading(false));
   }, [url]);
 
-  return;
+  return { data, isLoading, error };
 };
 
 export default useFetch;
