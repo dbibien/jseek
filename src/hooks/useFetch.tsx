@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { JobListType } from '../types';
 
 type paramsType = {
   url: string;
@@ -12,7 +13,7 @@ type paramsType = {
 };
 
 const useFetch = ({ url, method = 'GET', params }: paramsType) => {
-  const [data, setData] = useState();
+  const [data, setData] = useState<JobListType>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -32,25 +33,6 @@ const useFetch = ({ url, method = 'GET', params }: paramsType) => {
 
   useEffect(() => {
     setIsLoading(true);
-
-    // async function getData() {
-    //   let d, e, i;
-    //   try {
-    //     d = await axios.get(url, options);
-    //   } catch (error) {
-    //     e = true;
-    //     console.log('error: ', error);
-    //   } finally {
-    //     i = false;
-    //   }
-    //   return { d, e, i };
-    // }
-    // const { d, e, i } = await getData();
-    // console.log('nd: ', d);
-    // setData(d.data.data);
-    // setError(true);
-    // setIsLoading(false);
-
     axios
       .get(url, options)
       .then((data) => setData(data.data.data))
