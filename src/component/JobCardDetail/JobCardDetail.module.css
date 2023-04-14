@@ -2,6 +2,9 @@
     padding-top: 1rem;
     border-left: 1px solid black;
     height: 100vh;
+}
+.detailsContainer{
+    height: 80%;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -41,5 +44,22 @@
     background-color: #ea580c;
 }
 .paddingBottom{
+    padding-bottom: .5rem;
+}
+.description{
+    padding: 1rem;
+}
+.descriptParag{
+    line-height: 1.5rem;
+    padding-bottom: 1rem;
+}
+.sectionHeading{
+    letter-spacing: .06rem;
+    padding-bottom: .5rem
+}
+.ul{
+    padding-left: .6rem;
+}
+.listItem{
     padding-bottom: .5rem;
 }
