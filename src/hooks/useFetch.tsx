@@ -11,9 +11,9 @@ type paramsType = {
   };
 };
 
-const useFetch = async ({ url, method = 'GET', params }: paramsType) => {
+const useFetch = ({ url, method = 'GET', params }: paramsType) => {
   const [data, setData] = useState();
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const options = {
@@ -31,12 +31,31 @@ const useFetch = async ({ url, method = 'GET', params }: paramsType) => {
   };
 
   useEffect(() => {
-    setIsloading(true);
+    setIsLoading(true);
+
+    // async function getData() {
+    //   let d, e, i;
+    //   try {
+    //     d = await axios.get(url, options);
+    //   } catch (error) {
+    //     e = true;
+    //     console.log('error: ', error);
+    //   } finally {
+    //     i = false;
+    //   }
+    //   return { d, e, i };
+    // }
+    // const { d, e, i } = await getData();
+    // console.log('nd: ', d);
+    // setData(d.data.data);
+    // setError(true);
+    // setIsLoading(false);
+
     axios
       .get(url, options)
       .then((data) => setData(data.data.data))
       .catch((error) => setError(error))
-      .finally(() => setIsloading(false));
+      .finally(() => setIsLoading(false));
   }, [url]);
 
   return { data, isLoading, error };

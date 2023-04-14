@@ -16,9 +16,15 @@ const Home = () => {
   };
 
   const { data, isLoading, error } = useFetch(useFetchParams);
+
+  // console.log('data: ', data);
+
+  if (isLoading) return <h1>Loading...</h1>;
+  if (error) return <h1>{error}</h1>;
+
   return (
     <div className="home-container">
-      <JobList />
+      <JobList data={data} />
     </div>
   );
 };
