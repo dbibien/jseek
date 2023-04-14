@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import JobList from '../component/JobList/JobList';
 import useFetch from '../hooks/useFetch';
+import { jobType } from '../types';
+import JobCardDetail from '../component/JobCardDetail/JobCardDetail';
 
 const Home = () => {
-  // const [data, setData] = useState();
+  const [jobDetail, setJobDetail] = useState<jobType>();
 
   const useFetchParams = {
     url: 'https://jsearch.p.rapidapi.com/search',
@@ -24,7 +26,8 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <JobList data={data} />
+      <JobList data={data} setJobDetail={setJobDetail} />
+      <JobCardDetail key={jobDetail?.job_id} job={jobDetail} />
     </div>
   );
 };

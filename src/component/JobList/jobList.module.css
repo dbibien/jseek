@@ -1,0 +1,12 @@
+.container{
+  height: 100vh;
+  padding: 1rem;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 350px;
+  }
+}

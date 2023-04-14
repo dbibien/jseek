@@ -12,7 +12,9 @@ button {
     max-width: 1020px;
     margin: auto;
 }
-
-.home-container {
-    margin-top: 1rem;
+@media (min-width: 768px) {
+    .home-container{
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
 }
