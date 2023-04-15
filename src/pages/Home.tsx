@@ -6,6 +6,7 @@ import JobCardDetail from '../component/JobCardDetail/JobCardDetail';
 import Search from '../component/Search/Search';
 import { JobListType } from '../types';
 import axios from 'axios';
+import { BallTriangle } from 'react-loader-spinner';
 
 const Home = () => {
   const [data, setData] = useState<JobListType>();
@@ -36,7 +37,6 @@ const Home = () => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  // if (isLoading) return <h1>Loading...</h1>;
   if (error) return console.log(error);
 
   return (
@@ -47,9 +47,18 @@ const Home = () => {
         setError={setError}
       />
       {isLoading ? (
-        <>
-          <h1>Loading...</h1>
-        </>
+        <div className="spinner-container">
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#14b8a6"
+            ariaLabel="ball-triangle-loading"
+            wrapperClass={{}}
+            wrapperStyle=""
+            visible={true}
+          />
+        </div>
       ) : (
         <div className="home-container">
           <JobList data={data} setJobDetail={setJobDetail} />

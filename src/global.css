@@ -12,6 +12,13 @@ button {
     max-width: 1020px;
     margin: auto;
 }
+.spinner-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 @media (min-width: 768px) {
     .home-container{
         display: grid;
