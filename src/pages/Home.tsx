@@ -3,6 +3,7 @@ import JobList from '../component/JobList/JobList';
 import useFetch from '../hooks/useFetch';
 import { jobType } from '../types';
 import JobCardDetail from '../component/JobCardDetail/JobCardDetail';
+import Search from '../component/Search/Search';
 
 const Home = () => {
   const [jobDetail, setJobDetail] = useState<jobType>();
@@ -25,9 +26,12 @@ const Home = () => {
   if (error) return <h1>{error}</h1>;
 
   return (
-    <div className="home-container">
-      <JobList data={data} setJobDetail={setJobDetail} />
-      <JobCardDetail key={jobDetail?.job_id} job={jobDetail} />
+    <div>
+      <Search />
+      <div className="home-container">
+        <JobList data={data} setJobDetail={setJobDetail} />
+        <JobCardDetail key={jobDetail?.job_id} job={jobDetail} />
+      </div>
     </div>
   );
 };
