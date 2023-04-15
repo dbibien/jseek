@@ -3,7 +3,7 @@ import styles from './jobCard.module.css';
 
 const JobCard = ({ job, setJobDetail }) => {
   const handleClick = (theJob) => {
-    console.log('theJob: ', theJob);
+    // console.log('theJob: ', theJob);
     setJobDetail(theJob);
   };
   return (
