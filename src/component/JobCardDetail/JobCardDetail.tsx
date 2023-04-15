@@ -10,14 +10,23 @@ const JobCardDetail = (props: jobType) => {
         <p className={styles.paddingBottom}>
           {props.job?.employer_name}
           {' | Quality: '}
-          {props.job?.job_apply_quality_score * 100.0}
+          {(props.job?.job_apply_quality_score * 100.0).toFixed(2)}%
         </p>
         <p
           className={styles.paddingBottom}
         >{`${props.job?.job_city}, ${props.job?.job_state} ${props.job?.job_country}`}</p>
-        <p className={styles.paddingBottom}>{props.job?.job_employment_type}</p>
+        <p className={styles.paddingBottom}>
+          {props.job?.job_employment_type} | ${props.job?.job_min_salary} - $
+          {props.job?.job_max_salary} / {props.job?.job_salary_period}
+        </p>
 
-        <button className={styles.applyButton}>Apply now</button>
+        <a
+          href={props.job?.job_apply_link}
+          target="_blank"
+          className={styles.applyButton}
+        >
+          Apply now
+        </a>
         <button className={styles.bookmarkButton}>Bookmark</button>
       </div>
 
@@ -41,6 +50,7 @@ const JobCardDetail = (props: jobType) => {
               </li>
             ))}
           </ul>
+          <button className={styles.applyButton}>Apply now</button>
         </div>
       </div>
     </div>
