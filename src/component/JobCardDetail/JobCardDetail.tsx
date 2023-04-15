@@ -2,7 +2,7 @@ import { jobType } from '../../types';
 import styles from './JobCardDetail.module.css';
 
 const JobCardDetail = (props: jobType) => {
-  if (!props.job) return '';
+  if (!props.job) return <></>;
   return (
     <div className={styles.container}>
       <div className={styles.header}>
