@@ -37,7 +37,7 @@ const Home = () => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  if (error) return console.log(error);
+  if (error) console.log(error);
 
   return (
     <div>
