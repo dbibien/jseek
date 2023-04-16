@@ -4,7 +4,12 @@ import JobCard from '../JobCard/JobCard';
 import JobCardDetail from '../JobCardDetail/JobCardDetail';
 import styles from './jobList.module.css';
 
-const JobList = ({ data, setJobDetail }) => {
+type propsType = {
+  data: jobType[];
+  setJobDetail: React.Dispatch<React.SetStateAction<jobType> | undefined>;
+};
+
+const JobList = ({ data, setJobDetail }: propsType) => {
   return (
     <div className={styles.container}>
       {data?.map((job) => (
