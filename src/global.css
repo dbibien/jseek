@@ -12,15 +12,21 @@ button {
     max-width: 1020px;
     margin: auto;
 }
+.home-container{
+    position: relative;
+}
+
 .spinner-container{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
+
 @media (min-width: 768px) {
     .home-container{
+        position: unset;
         display: grid;
         grid-template-columns: 1fr 4fr;
     }
