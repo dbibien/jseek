@@ -6,7 +6,6 @@ type propsType = {
 };
 
 const JobCardDetail = ({ job }: propsType) => {
-  console.log('job: ', job);
   if (!job) return <></>;
   return (
     <div className={styles.container}>
