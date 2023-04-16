@@ -26,6 +26,6 @@ export type jobType = {
   };
 }
 
-export type JobListType = {
+export type jobListType = {
     data: jobType[];
   };

@@ -3,7 +3,7 @@ import styles from './jobCard.module.css';
 
 type propsType = {
   job: jobType;
-  setJobDetail: React.Dispatch<React.SetStateAction<jobType> | undefined>;
+  setJobDetail: React.Dispatch<React.SetStateAction<jobType | undefined>>;
 };
 
 const JobCard = ({ job, setJobDetail }: propsType) => {

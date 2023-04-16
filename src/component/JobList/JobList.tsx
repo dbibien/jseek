@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import { JobListType, jobType } from '../../types';
+import { jobType } from '../../types';
 import JobCard from '../JobCard/JobCard';
-import JobCardDetail from '../JobCardDetail/JobCardDetail';
 import styles from './jobList.module.css';
 
 type propsType = {
   data: jobType[];
-  setJobDetail: React.Dispatch<React.SetStateAction<jobType> | undefined>;
+  setJobDetail: React.Dispatch<React.SetStateAction<jobType | undefined>>;
 };
 
 const JobList = ({ data, setJobDetail }: propsType) => {

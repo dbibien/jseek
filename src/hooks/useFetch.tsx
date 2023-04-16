@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { JobListType } from '../types';
+import { jobListType } from '../types';
 
 type paramsType = {
   url: string;
@@ -13,7 +13,7 @@ type paramsType = {
 };
 
 const useFetch = ({ url, method = 'GET', params }: paramsType) => {
-  const [data, setData] = useState<JobListType>();
+  const [data, setData] = useState<jobListType>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 

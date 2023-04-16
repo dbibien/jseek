@@ -4,12 +4,12 @@ import useFetch from '../hooks/useFetch';
 import { jobType } from '../types';
 import JobCardDetail from '../component/JobCardDetail/JobCardDetail';
 import Search from '../component/Search/Search';
-import { JobListType } from '../types';
+import { jobListType } from '../types';
 import axios from 'axios';
 import { BallTriangle } from 'react-loader-spinner';
 
 const Home = () => {
-  const [data, setData] = useState<JobListType>();
+  const [data, setData] = useState<jobType[]>();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [jobDetail, setJobDetail] = useState<jobType>();
@@ -60,7 +60,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-container">
-          <JobList data={data} setJobDetail={setJobDetail} />
+          <JobList data={data!} setJobDetail={setJobDetail} />
           <JobCardDetail key={jobDetail?.job_id} job={jobDetail!} />
         </div>
       )}

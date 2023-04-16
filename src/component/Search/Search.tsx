@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styles from './Search.module.css';
 import axios from 'axios';
-import { JobListType } from '../../types';
+import { jobListType, jobType } from '../../types';
 
 type propsType = {
-  setData: React.Dispatch<React.SetStateAction<JobListType | undefined>>;
+  setData: React.Dispatch<React.SetStateAction<jobType[] | undefined>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   setError: React.Dispatch<React.SetStateAction<boolean>>;
 };
