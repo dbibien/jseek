@@ -4,6 +4,7 @@ export type jobType = {
   employer_website: string;
 
   job_id: string;
+  job_apply_quality_score: number;
   job_apply_link: string;
   job_city: string;
   job_state: string;

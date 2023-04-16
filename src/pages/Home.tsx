@@ -54,15 +54,14 @@ const Home = () => {
             radius={5}
             color="#14b8a6"
             ariaLabel="ball-triangle-loading"
-            wrapperClass={{}}
-            wrapperStyle=""
+            wrapperClass={''}
             visible={true}
           />
         </div>
       ) : (
         <div className="home-container">
           <JobList data={data} setJobDetail={setJobDetail} />
-          <JobCardDetail key={jobDetail?.job_id} job={jobDetail} />
+          <JobCardDetail key={jobDetail?.job_id} job={jobDetail!} />
         </div>
       )}
     </div>

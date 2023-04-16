@@ -1,27 +1,32 @@
 import { jobType } from '../../types';
 import styles from './JobCardDetail.module.css';
 
-const JobCardDetail = (props: jobType) => {
-  if (!props.job) return <></>;
+type propsType = {
+  job: jobType;
+};
+
+const JobCardDetail = ({ job }: propsType) => {
+  console.log('job: ', job);
+  if (!job) return <></>;
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1 className={styles.paddingBottom}>{props.job?.job_title}</h1>
+        <h1 className={styles.paddingBottom}>{job?.job_title}</h1>
         <p className={styles.paddingBottom}>
-          {props.job?.employer_name}
+          {job?.employer_name}
           {' | Quality: '}
-          {(props.job?.job_apply_quality_score * 100.0).toFixed(2)}%
+          {(job?.job_apply_quality_score * 100.0).toFixed(2)}%
         </p>
         <p
           className={styles.paddingBottom}
-        >{`${props.job?.job_city}, ${props.job?.job_state} ${props.job?.job_country}`}</p>
+        >{`${job?.job_city}, ${job?.job_state} ${job?.job_country}`}</p>
         <p className={styles.paddingBottom}>
-          {props.job?.job_employment_type} | ${props.job?.job_min_salary} - $
-          {props.job?.job_max_salary} / {props.job?.job_salary_period}
+          {job?.job_employment_type} | ${job?.job_min_salary} - $
+          {job?.job_max_salary} / {job?.job_salary_period}
         </p>
 
         <a
-          href={props.job?.job_apply_link}
+          href={job?.job_apply_link}
           target="_blank"
           className={styles.applyButton}
         >
@@ -33,10 +38,10 @@ const JobCardDetail = (props: jobType) => {
       <div className={styles.detailsContainer}>
         <div className={styles.description}>
           <h4 className={styles.sectionHeading}>Description</h4>
-          <p className={styles.descriptParag}>{props.job?.job_description}</p>
+          <p className={styles.descriptParag}>{job?.job_description}</p>
           <h4 className={styles.sectionHeading}>Qualifiation</h4>
           <ul className={styles.ul}>
-            {props.job?.job_highlights?.Qualifications?.map((q) => (
+            {job?.job_highlights?.Qualifications?.map((q) => (
               <li className={styles.listItem} key={q}>
                 {q}
               </li>
@@ -44,7 +49,7 @@ const JobCardDetail = (props: jobType) => {
           </ul>
           <h4 className={styles.sectionHeading}>Responsibilities</h4>
           <ul className={styles.ul}>
-            {props.job?.job_highlights?.Responsibilities?.map((r) => (
+            {job?.job_highlights?.Responsibilities?.map((r) => (
               <li className={styles.listItem} key={r}>
                 {r}
               </li>
