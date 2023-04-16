@@ -1,8 +1,13 @@
 import { jobType } from '../../types';
 import styles from './jobCard.module.css';
 
-const JobCard = ({ job, setJobDetail }) => {
-  const handleClick = (theJob) => {
+type propsType = {
+  job: jobType;
+  setJobDetail: React.Dispatch<React.SetStateAction<jobType> | undefined>;
+};
+
+const JobCard = ({ job, setJobDetail }: propsType) => {
+  const handleClick = (theJob: jobType) => {
     // console.log('theJob: ', theJob);
     setJobDetail(theJob);
   };
